@@ -499,7 +499,8 @@ class SegmentedControlState<T> extends State<ApaSlidingSegmentedControl<T>>
           children.add(child);
           counter +=1;
           if(counter == widget.children.length && !isAdd && widget.defaultOfView) {
-            children.add(widget.isError ? Align(alignment:AlignmentDirectional.centerStart ,child: ApaLoadImage(assetName: 'assets/svg/key_red.svg',)) : Align(alignment:AlignmentDirectional.centerStart ,child: ApaLoadImage(assetName: 'assets/svg/key.svg',)) ,);
+            //
+            children.add(widget.isError ? Align(alignment:AlignmentDirectional.centerStart ,child: ApaLoadImage(assetName: 'assets/svg/public/key_red.svg',)) : Align(alignment:AlignmentDirectional.centerStart ,child: ApaLoadImage(assetName: 'assets/svg/public/key.svg',)) ,);
             isAdd = true;
             counter = 0;
           }
