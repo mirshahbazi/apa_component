@@ -132,6 +132,9 @@ class _FontWeightTween extends Tween<FontWeight> {
 ///    style introduced in iOS 13.
 ///  * <https://developer.apple.com/design/human-interface-guidelines/ios/controls/segmented-controls/>
 class ApaSlidingSegmentedControl<T> extends StatefulWidget {
+  String imageAddressOne;
+  String imageAddressTwo;
+
   /// Creates an iOS-style segmented control bar.
   ///
   /// The [children] and [onValueChanged] arguments must not be null. The
@@ -156,6 +159,8 @@ class ApaSlidingSegmentedControl<T> extends StatefulWidget {
     this.thumbColor = _kThumbColor,
     this.padding = _kHorizontalItemPadding,
     this.backgroundColor = Colors.white,
+    this.imageAddressOne,
+    this.imageAddressTwo,
     this.isError,
     this.isDisable,
     this.cornerRadius = _kCornerRadius,
@@ -500,7 +505,7 @@ class SegmentedControlState<T> extends State<ApaSlidingSegmentedControl<T>>
           counter +=1;
           if(counter == widget.children.length && !isAdd && widget.defaultOfView) {
             //
-            children.add(widget.isError ? Align(alignment:AlignmentDirectional.centerStart ,child: ApaLoadImage(assetName: 'assets/key_red.svg',)) : Align(alignment:AlignmentDirectional.centerStart ,child: ApaLoadImage(assetName: 'assets/key.svg',)) ,);
+            children.add(widget.isError ? Align(alignment:AlignmentDirectional.centerStart ,child: ApaLoadImage(assetName: widget.imageAddressOne,)) : Align(alignment:AlignmentDirectional.centerStart ,child: ApaLoadImage(assetName: widget.imageAddressTwo,)) ,);
             isAdd = true;
             counter = 0;
           }
